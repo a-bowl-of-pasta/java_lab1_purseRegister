@@ -58,34 +58,7 @@ public class register {
                 return obj;
     }
 
-    public static void main(String [] args) {
-        // - - - imports and variable
-        Scanner inp = new Scanner(System.in);
-        DecimalFormat niceNneat = new DecimalFormat("0.00");
-        boolean cont;
-        // - - -
-        do {
-            double THE_BAG = 0.0;
 
-            // - - - usr input
-            System.out.print("PUT THE MONEY IN THE BAG!!! :: ");
-            THE_BAG = Double.parseDouble(niceNneat.format(inp.nextDouble()));
 
-            // - - -  the program logic
-           purse changedPurse = makeChange(THE_BAG);
-           changedPurse.makeString();
-
-            // - - - - - run program again
-            System.out.print("\ndo it again ?!?!?!??!?! <y/n> :: ");
-            String checker = inp.next();
-            if(checker.equalsIgnoreCase("y")){
-                cont = true;
-                System.out.println("\n- - - - - - - - - - - - - ");
-            }else{
-                cont = false;
-            }
-
-        }while(cont);
-    }
 
 }
