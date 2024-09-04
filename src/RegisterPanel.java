@@ -7,8 +7,7 @@ public class RegisterPanel extends JPanel {
 
         // - - - logic and display classes
         register logic = new register();
-        PursePanel imagePanel;
-
+        JPanel imagePanel = new JPanel();
         // - - - user input field
         JTextField input;
         String txtInp;
@@ -34,8 +33,11 @@ public class RegisterPanel extends JPanel {
 
         }
         // - - - callable function for getting input
-        public void getInput(){
-            sender.addActionListener(iman);
+        public JPanel getInput(){
+
+                sender.addActionListener(iman);
+                return imagePanel;
+
         }
 
         // - - - - does the action event to manipulate data
@@ -45,23 +47,30 @@ public class RegisterPanel extends JPanel {
 
                 try // - - - creates image panel with user input
                 {
+                    imagePanel.setLayout(new BorderLayout());
                     double send = Double.parseDouble(txtInp);
                     purse recieved = logic.makeChange(send);
-                    imagePanel = new PursePanel(recieved);
+                    PursePanel createImage = new PursePanel(recieved);
+                    imagePanel.add(createImage.getImagePanel(), BorderLayout.CENTER);
+                    imagePanel.revalidate(); imagePanel.repaint();
 
                 }catch(NumberFormatException nf) // - - - creates image panel with error screen 
                 {
                     JTextField ERROR_SCREEN =  new JTextField(txtInp);
                     ERROR_SCREEN.setPreferredSize(new Dimension(315, 100));
                     ERROR_SCREEN.setText("ERROR, PLEASE ENTER A DOLLAR AMOUNT #.##");
-                    imagePanel = new PursePanel(ERROR_SCREEN);
+                    PursePanel createImage = new PursePanel(ERROR_SCREEN);
+                    imagePanel.add(createImage.getImagePanel());
                 }
             }
         }
 
         // - - - returns the final image panel
-        public PursePanel getImgPanel()
+        public JPanel getImgPanel()
         {
             return imagePanel;
+        }
+        public JPanel getInputPanel(){
+            return inputPanel;
         }
     }

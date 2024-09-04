@@ -4,9 +4,10 @@ import java.awt.event.WindowEvent;
 
 public class MakingChange {
 
-    static JFrame framed;
-    static JPanel mainPanel;
+     static JFrame framed;
+     static JPanel mainPanel;
     RegisterPanel inputPanel;
+    PursePanel imagePanel;
 
    // - - - - sets up the basic layout of the panel
     MakingChange()
@@ -15,7 +16,7 @@ public class MakingChange {
         // - - - sets up main frame
         framed = new JFrame("gui for purse program");
         framed.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        framed.setSize( 450, 400);   // - - - - sets the main panel
+        framed.setSize( 650, 600);   // - - - - sets the main panel
 
         // - - - sets up main panel that will hold img and input
         mainPanel = new JPanel();
@@ -26,7 +27,7 @@ public class MakingChange {
         inputPanel = new RegisterPanel();
 
         // - - -  adds input and main panel to frame
-        mainPanel.add(inputPanel);
+        mainPanel.add(inputPanel.getInputPanel());
         framed.add(mainPanel);
 
         // - - - messes with the visuals
@@ -37,8 +38,8 @@ public class MakingChange {
 
     public static void main(String[] args) {
         MakingChange GUI = new MakingChange();
-        GUI.inputPanel.getInput();
-        mainPanel.add(GUI.inputPanel.getImgPanel());
+        mainPanel.add(GUI.inputPanel.getInput());
+
     }
 
     public void deeestroyWindow() // closes the window
