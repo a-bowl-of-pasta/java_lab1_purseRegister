@@ -45,9 +45,9 @@ public class register {
 
                     // - - - 0 - 4 = bills 4 - 8 = coins
                     if(i <= 4 )
-                        den = new Denomination(dollaDollaBillz[i], ddbVal[i], "bill", dollaDollaBillz[i]);
+                        den = new Denomination(dollaDollaBillz[i], ddbVal[i], "bill","/currency/"+ dollaDollaBillz[i]+".png");
                     else
-                        den = new Denomination(dollaDollaBillz[i], ddbVal[i], "coin", dollaDollaBillz[i]);
+                        den = new Denomination(dollaDollaBillz[i], ddbVal[i], "coin","/currency/"+ dollaDollaBillz[i]+".png");
 
                     obj.add(den, multiplier);
 

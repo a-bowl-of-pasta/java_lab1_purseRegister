@@ -19,12 +19,24 @@ public class purse {
 
        return 0;
     }
+    public String[] getImgName(){
+       String[] imageLocations = new String[cash.size()];
 
+       int i = 0;
+       for(Denomination values : cash.keySet()){
+           imageLocations[i] = values.img();
+       i++;
+       }
+
+    return imageLocations;
+    }
     public String makeString(){
 
-       String readableFormat;
+       String readableFormat = "";
+       for(Denomination values : cash.keySet()){
+           readableFormat +=  cash.get(values)+ " " + values.name() + "\n";
+       }
 
-
-       return null;
+       return readableFormat;
     }
 }
