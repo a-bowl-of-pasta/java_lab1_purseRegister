@@ -16,6 +16,7 @@ public class RegisterPanel extends JPanel {
         // - - - panel and input manager implementation
         JPanel inputPanel;
         inputHandler iman = new inputHandler();
+        Font betterFont = new Font("SansSerif",Font.BOLD, 20);
 
         // - - - sets up the general layout of the panel
         RegisterPanel()
@@ -26,6 +27,8 @@ public class RegisterPanel extends JPanel {
             inputPanel.setLayout(new GridLayout(2,0));
             //- - - - sets up the text field
             input = new JTextField();
+            input.setFont(betterFont);
+            sender.setFont(betterFont);
             input.setPreferredSize(new Dimension(100, 50));
             //- - - - adds the textField to the input panel
             inputPanel.add(input);
@@ -44,6 +47,7 @@ public class RegisterPanel extends JPanel {
         public class inputHandler implements ActionListener {
             public void actionPerformed(ActionEvent e) {
                 String txtInp = input.getText();
+                imagePanel.removeAll();
 
                 try // - - - creates image panel with user input
                 {
@@ -52,8 +56,6 @@ public class RegisterPanel extends JPanel {
                     purse recieved = logic.makeChange(send);
                     PursePanel createImage = new PursePanel(recieved);
                     imagePanel.add(createImage.getImagePanel(), BorderLayout.CENTER);
-                    imagePanel.revalidate(); imagePanel.repaint();
-
                 }catch(NumberFormatException nf) // - - - creates image panel with error screen 
                 {
                     JTextField ERROR_SCREEN =  new JTextField(txtInp);
@@ -62,6 +64,7 @@ public class RegisterPanel extends JPanel {
                     PursePanel createImage = new PursePanel(ERROR_SCREEN);
                     imagePanel.add(createImage.getImagePanel());
                 }
+                imagePanel.revalidate(); imagePanel.repaint();
             }
         }
 

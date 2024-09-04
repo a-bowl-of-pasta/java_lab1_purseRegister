@@ -17,7 +17,7 @@ public class register {
         String[] dollaDollaBillz =
                 {
                         "hundred", "fifty", "twenty", "ten", "one",
-                        "quarter", "dime", "nickle", "penny"
+                        "quarter", "dime", "nickel", "penny"
                 };
         double[] ddbVal =
                 {
