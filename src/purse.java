@@ -1,31 +1,19 @@
 import java.util.HashMap;
 
-
-
 public class purse {
 
     HashMap<Denomination, Integer> cash = new HashMap<Denomination, Integer>();
 
-   public void add(Denomination obj, int amt){
-       cash.put(obj, amt);
-   }
+   public void add(Denomination obj, int amt){cash.put(obj, amt);}
 
-    public double remove(){
-
-       return 0;
-    }
-
-    public double getValue(){
-
-       return 0;
-    }
-    public String[] getImgName(){
+    // - - - returns a string array holding the image path
+    public String[] getImgName()
+    {
        String[] imageLocations = new String[cash.size()];
-
        int i = 0;
        for(Denomination values : cash.keySet()){
            imageLocations[i] = values.img();
-       i++;
+           i++;
        }
 
     return imageLocations;
@@ -39,4 +27,8 @@ public class purse {
 
        return readableFormat;
     }
+
+    public double remove(){return 0;}
+
+    public double getValue(){return 0;}
 }

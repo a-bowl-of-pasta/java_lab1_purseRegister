@@ -16,6 +16,7 @@ public class RegisterPanel extends JPanel {
         // - - - panel and input manager implementation
         JPanel inputPanel;
         inputHandler iman = new inputHandler();
+        // - - - sets the font
         Font betterFont = new Font("SansSerif",Font.BOLD, 20);
 
         // - - - sets up the general layout of the panel
@@ -27,9 +28,10 @@ public class RegisterPanel extends JPanel {
             inputPanel.setLayout(new GridLayout(2,0));
             //- - - - sets up the text field
             input = new JTextField();
+            input.setPreferredSize(new Dimension(100, 50));
+            //- - - resets the font
             input.setFont(betterFont);
             sender.setFont(betterFont);
-            input.setPreferredSize(new Dimension(100, 50));
             //- - - - adds the textField to the input panel
             inputPanel.add(input);
             inputPanel.add(sender);
@@ -37,10 +39,8 @@ public class RegisterPanel extends JPanel {
         }
         // - - - callable function for getting input
         public JPanel getInput(){
-
                 sender.addActionListener(iman);
                 return imagePanel;
-
         }
 
         // - - - - does the action event to manipulate data
@@ -52,8 +52,10 @@ public class RegisterPanel extends JPanel {
                 try // - - - creates image panel with user input
                 {
                     imagePanel.setLayout(new BorderLayout());
+                    // - - gets user input
                     double send = Double.parseDouble(txtInp);
                     purse recieved = logic.makeChange(send);
+                    // - - creates the pursePanel obj
                     PursePanel createImage = new PursePanel(recieved);
                     imagePanel.add(createImage.getImagePanel(), BorderLayout.CENTER);
                 }catch(NumberFormatException nf) // - - - creates image panel with error screen 
@@ -69,10 +71,6 @@ public class RegisterPanel extends JPanel {
         }
 
         // - - - returns the final image panel
-        public JPanel getImgPanel()
-        {
-            return imagePanel;
-        }
         public JPanel getInputPanel(){
             return inputPanel;
         }

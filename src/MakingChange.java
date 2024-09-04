@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.WindowEvent;
 
 public class MakingChange {
 
@@ -40,11 +39,6 @@ public class MakingChange {
         MakingChange GUI = new MakingChange();
         mainPanel.add(GUI.inputPanel.getInput());
 
-    }
-
-    public void deeestroyWindow() // closes the window
-    {
-        framed.dispatchEvent(new WindowEvent(framed, WindowEvent.WINDOW_CLOSING));
     }
 
 }
