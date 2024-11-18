@@ -1,3 +1,8 @@
+package purseGui;
+
+import PurseMaker.purse;
+import PurseMaker.register;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

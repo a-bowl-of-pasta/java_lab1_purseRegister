@@ -1,3 +1,8 @@
+package purseGui;
+
+import PurseMaker.Denomination;
+import PurseMaker.purse;
+
 import javax.swing.*;
 import java.awt.*;
 

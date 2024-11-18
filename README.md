@@ -1,15 +1,5 @@
-I don't know how to properly write README files, bear with me
-
-the file order goes as follows :: 
-
-MakingChange - main method and creates main jframe && Jpanel layout
-
-RegisterPanel - makes the input panel layout, creates logic obj, creates and sends data to PursePanel
-
-PursePanel - takes in logic obj and uses it to display images
-
-Register - logic driver class
-
-Purse - main logic class 
-
-Denomination - holds money info
+* the strategies i used are factory and builder strategies
+* use a factory or component pattern to break up purse into cash and coins
+* use a builder to build the purse
+* --- * do something like (set 10, set 20, set 40, set .25, set .50, etc)
+* --- * use the factory to build based off of the builder

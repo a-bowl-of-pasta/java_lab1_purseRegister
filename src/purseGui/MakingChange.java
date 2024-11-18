@@ -1,3 +1,5 @@
+package purseGui;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -13,7 +15,7 @@ public class MakingChange {
     {
 
         // - - - sets up main frame
-        framed = new JFrame("gui for purse program");
+        framed = new JFrame("gui for PurseMaker.purse program");
         framed.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         framed.setSize( 650, 600);   // - - - - sets the main panel
 

@@ -1,8 +1,8 @@
-import java.util.Scanner;
-import java.text.DecimalFormat;
+package PurseMaker;
+
 /*
 this file is pretty much all done, just needs to be tested
-TODO : finish the purse.java methods
+TODO : finish the PurseMaker.purse.java methods
 TODO : finish to string method
 TODO : finish the other methods
 TODO : test and debug

@@ -1,3 +1,5 @@
+package PurseMaker;
+
 import java.util.HashMap;
 
 public class purse {
