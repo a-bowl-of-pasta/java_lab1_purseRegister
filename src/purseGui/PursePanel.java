@@ -1,7 +1,6 @@
 package purseGui;
 
-import PurseMaker.Denomination;
-import PurseMaker.purse;
+import MONEY.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,7 +9,7 @@ public class PursePanel extends JPanel{
 
     purse pp;
     JPanel imgPanel = new JPanel();
-    PursePanel(purse pp){
+    public PursePanel(purse pp){
         this.pp = pp;
         imgPanel.setLayout(new GridLayout(2,6));
         // - - - this is the name and amount display loop

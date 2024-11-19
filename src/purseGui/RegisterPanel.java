@@ -1,7 +1,6 @@
 package purseGui;
 
-import PurseMaker.purse;
-import PurseMaker.register;
+import MONEY.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,7 +10,7 @@ import java.awt.event.ActionListener;
 public class RegisterPanel extends JPanel {
 
         // - - - logic and display classes
-        register logic = new register();
+        purse pp = new purse();
         JPanel imagePanel = new JPanel();
         // - - - user input field
         JTextField input;
@@ -25,7 +24,7 @@ public class RegisterPanel extends JPanel {
         Font betterFont = new Font("SansSerif",Font.BOLD, 20);
 
         // - - - sets up the general layout of the panel
-        RegisterPanel()
+       public RegisterPanel()
         {
 
             //- - - - sets up the JPanel
@@ -59,9 +58,9 @@ public class RegisterPanel extends JPanel {
                     imagePanel.setLayout(new BorderLayout());
                     // - - gets user input
                     double send = Double.parseDouble(txtInp);
-                    purse recieved = logic.makeChange(send);
+                    pp.denominationFactory(send);
                     // - - creates the pursePanel obj
-                    PursePanel createImage = new PursePanel(recieved);
+                    PursePanel createImage = new PursePanel(pp);
                     imagePanel.add(createImage.getImagePanel(), BorderLayout.CENTER);
                 }catch(NumberFormatException nf) // - - - creates image panel with error screen 
                 {

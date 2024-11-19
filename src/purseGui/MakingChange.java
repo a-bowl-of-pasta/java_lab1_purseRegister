@@ -5,13 +5,13 @@ import java.awt.*;
 
 public class MakingChange {
 
-     static JFrame framed;
-     static JPanel mainPanel;
-    RegisterPanel inputPanel;
-    PursePanel imagePanel;
+     public static JFrame framed;
+     public static JPanel mainPanel;
+     public RegisterPanel inputPanel;
+     PursePanel imagePanel;
 
    // - - - - sets up the basic layout of the panel
-    MakingChange()
+    public MakingChange()
     {
 
         // - - - sets up main frame
@@ -34,12 +34,6 @@ public class MakingChange {
         // - - - messes with the visuals
         mainPanel.revalidate(); // resize and reposition
         framed.setVisible(true);
-
-    }
-
-    public static void main(String[] args) {
-        MakingChange GUI = new MakingChange();
-        mainPanel.add(GUI.inputPanel.getInput());
 
     }
 
