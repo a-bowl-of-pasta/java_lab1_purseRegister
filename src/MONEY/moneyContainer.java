@@ -19,9 +19,16 @@ abstract class moneyContainer {
     public HashMap<Denomination, Integer> cash = new HashMap<Denomination, Integer>();
 
     // === remove from container, get value from container, add to container ===
-    public double remove(){return 0;}
+    protected void removeFromMap(Denomination obj, int amt){
+        int value = cash.get(obj);
+        value = value - amt;
+        cash.remove(obj);
+        cash.put(obj, value);
+    }
+    public void remove(double amt){denominationFactory(amt, 'r'); }
     public double getValue(){return 0;}
-    public void add(Denomination obj, int amt){cash.put(obj, amt);}
+    protected void addToMap(Denomination obj, int amt){cash.put(obj, amt);}
+    public void add(double amt){denominationFactory(amt, 'a'); }
     // === gets image path ===
     public String[] getImgName()
     {
@@ -35,7 +42,7 @@ abstract class moneyContainer {
         return imageLocations;
     }
     // === mass produces denominations ===
-    public void denominationFactory(double amt) {
+    public void denominationFactory(double amt, char key) {
         int multiplier;
         double temp;
         // - - - - logic that finds number of bills / coins
@@ -55,7 +62,10 @@ abstract class moneyContainer {
                 else
                     den = new Denomination(dollaDollaBillz[i], ddbVal[i], "coin", "src/currency/" + dollaDollaBillz[i] + ".png");
 
-                add(den, multiplier);
+                if(key == 'a')
+                    addToMap(den, multiplier);
+                else if (key == 'r')
+                    removeFromMap(den, multiplier);
 
                 amt -= multiplier * ddbVal[i];
             }
