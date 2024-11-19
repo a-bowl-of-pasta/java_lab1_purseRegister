@@ -1,5 +1,3 @@
-* the strategies i used are factory and builder strategies
-* use a factory or component pattern to break up purse into cash and coins
-* use a builder to build the purse
-* --- * do something like (set 10, set 20, set 40, set .25, set .50, etc)
-* --- * use the factory to build based off of the builder
+* the strategies i am using are the factory and a bridge/adapter/mediator pattern
+* the factory is being used to mass produce the denominations and the various classes that extend moneyContainer
+* the mediator pettern is being used to introduce communication between 2 classes that impliment the same abstract class
